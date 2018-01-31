@@ -1,0 +1,221 @@
+body {
+  background-color: LightGrey;
+  overflow: hidden;
+}
+
+label {
+  background-color: white;
+  position: absolute;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  top: -9999px;
+  left: -9999px;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+li {
+  margin-top: 7px;
+}
+
+.dark {
+  color: #3c3c3c;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.flex{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.text-box {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: #3c3c3c;
+  font-size: 1.2em;
+  margin: 0px 20px 0px 20px;
+}
+
+/* ==================== Slide 1 ==================== */
+/* Button for next slide */
+label[for=hide-1]{
+  z-index: 11
+}
+
+.slide-1 {
+  height: 100vh;
+  width: 100vw;
+  background-color: MintCream;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Hides button when clicked */
+#hide-1[type=checkbox]:checked ~ label[for=hide-1] {
+  z-index: 0;
+  background-color: pink;
+}
+
+/* Hides slide when clicked */
+#hide-1[type=checkbox]:checked ~ .slide-1 {
+  z-index: 0;
+}
+
+/* ==================== Slide 2 ==================== */
+label[for=hide-2]{
+  z-index: 9
+}
+
+.slide-2 {
+  z-index: 8;
+  height: 100vh;
+  width: 100vw;
+  background-color: MintCream;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#hide-2[type=checkbox]:checked ~ label[for=hide-2] {
+  top: 30px;
+  z-index: 0;
+  background-color: pink;
+}
+
+#hide-2[type=checkbox]:checked ~ .slide-2 {
+  z-index: 0;
+}
+
+.square-demo {
+  position: relative;
+  margin: 20px 20px 20px 20px;
+}
+
+.square-1 {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  background-color: Pink;
+  border: 3px dashed red;
+  opacity: 0.7;
+}
+
+.square-2 {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  top: 30px;
+  left: 200px;
+  background-color: LightGreen;
+  border: 3px dashed green;
+  opacity: 0.7;
+}
+
+#sq2 {
+  opacity: 0;
+}
+
+.square-2:hover {
+  z-index: 9001;
+}
+
+.square-2:hover #sq2 {
+  opacity: 1;
+}
+
+.square-3 {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  bottom: 110px;
+  left: 100px;
+  background-color: LightBlue;
+  border: 3px dashed blue;
+  opacity: 0.7;
+}
+
+b {
+  font-family: sans-serif;
+  color: black;
+}
+
+/* ==================== Slide 3 ==================== */
+
+label[for=hide-3]{
+  z-index: 7;
+}
+
+.slide-3 {
+  z-index: 6;
+  height: 100vh;
+  width: 100vw;
+  background-color: MintCream;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#hide-3[type=checkbox]:checked ~ label[for=hide-3] {
+  top: 55px;
+  z-index: 0;
+  background-color: pink;
+}
+
+#hide-3[type=checkbox]:checked ~ .slide-3 {
+  z-index: 0;
+}
+
+/* Show z-index effect */
+label[for=reveal]{
+  z-index: 7;
+  bottom: 0;
+}
+
+#reveal[type=checkbox]:checked ~ .slide-1{
+  z-index: 1;
+  -webkit-transform: translate3d(200px, 30px, 0px) rotate3d(-1, 2, 0, -70deg);
+  box-shadow: 10px 10px 8px 10px #3c3c3c;
+  opacity: 0.7;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+#reveal[type=checkbox]:checked ~ .slide-2{
+  z-index: 2;
+  -webkit-transform: translate3d(0px, 0px, 0px) rotate3d(-1, 2, 0, -70deg);
+  box-shadow: 10px 10px 8px 10px #3c3c3c;
+  opacity: 0.7;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+#reveal[type=checkbox]:checked ~ .slide-3{
+  z-index: 3;
+  -webkit-transform: translate3d(-200px, -30px, 0px) rotate3d(-1, 2, 0, -70deg);
+  box-shadow: 10px 10px 8px 10px #3c3c3c;
+  opacity: 0.7;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
