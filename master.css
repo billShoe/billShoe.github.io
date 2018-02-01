@@ -42,8 +42,9 @@ li {
   align-content: center;
 }
 
-.flex{
+.flex-col{
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
 }
 
@@ -188,6 +189,37 @@ label[for=hide-3]{
   z-index: 0;
 }
 
+.square-4 {
+  display: inline;
+  width: 60px;
+  min-width: 60px;
+  height: 20px;
+  position: relative;
+  right: 65px;
+  background-color: Pink;
+  border: 3px dashed red;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.drop-down {
+  z-index: 1;
+}
+
+#sq4[type=checkbox] {
+  opacity: 1;
+  position: static;
+  z-index: inherit;
+}
+
+#sq4[type=checkbox]:checked ~ .square-4 {
+  z-index: 0;
+}
+
+#sixtypx {
+  padding-left: 60px;
+}
+
 /* Show z-index effect */
 label[for=reveal]{
   z-index: 7;
@@ -252,4 +284,8 @@ label[for=reveal]{
     width: 0;
     height: 0;
   }
+}
+
+.debug {
+  z-index: 9001;
 }
