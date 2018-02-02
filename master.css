@@ -4,7 +4,7 @@ body {
 }
 
 label {
-  background-color: white;
+  background-color: MintCream;
   position: absolute;
   display: inline-block;
   padding: 5px 10px 5px 10px;
@@ -50,6 +50,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   text-align: center;
 }
 
@@ -292,6 +293,75 @@ label[for=hide-4]{
 
 #hide-4[type=checkbox]:checked ~ .slide-4 {
   z-index: 0;
+}
+
+#animate {
+  position: static;
+  opacity: 1;
+  display: inline;
+}
+
+.square-7 {
+  position: relative;
+  width: 70%;
+  height: 25%;
+  background-color: red;
+  opacity: 0;
+}
+
+.questions {
+  font-size: 5em;
+  color: white;
+  text-shadow: 5px 5px black;
+  position: relative;
+  top: 30%;
+}
+
+#animate[type=checkbox]:checked ~ .square-7 {
+  animation-name: animation;
+  opacity: 1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+}
+
+#animate[type=checkbox]:checked ~ .questions {
+  opacity: 1;
+}
+
+@keyframes animation {
+  2%   {
+          background-color: red;
+          bottom: 0px;
+          height: 25%;
+        }
+  24%  {
+        background-color: orange;
+      }
+  30% {
+        background-color: yellow;
+        height: 40%;
+        width: 90%;
+        box-shadow: 40px 40px 40px #3c3c3c;
+      }
+  46% {
+        background-color: green;
+        bottom: 400px;
+        z-index: 0;
+      }
+  62% {
+        background-color: blue;
+        z-index: -1;
+      }
+  78% {
+        background-color: purple;
+        height: 25%;
+      }
+  100%{
+      background-color: red;
+      bottom: 0;
+      z-index: -1;
+    }
 }
 
 /* Show z-index effect */
