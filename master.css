@@ -27,6 +27,10 @@ h2 {
   text-align: center;
 }
 
+ul {
+  text-align: left;
+}
+
 li {
   margin-top: 7px;
 }
@@ -46,6 +50,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  text-align: center;
 }
 
 .text-box {
@@ -180,7 +185,7 @@ label[for=hide-3]{
 }
 
 #hide-3[type=checkbox]:checked ~ label[for=hide-3] {
-  top: 55px;
+  top: 50px;
   z-index: 0;
   background-color: pink;
 }
@@ -220,15 +225,84 @@ label[for=hide-3]{
   padding-left: 60px;
 }
 
+.demo-2 {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  bottom: 0;
+  background-color: LightGrey;
+  z-index: 1;
+}
+
+.square-5 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 0;
+  background-color: MintCream;
+  z-index: 1;
+}
+
+.square-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  bottom: 90%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: SkyBlue;
+  color: white;
+  font: 4em arial, sans-serif, white;
+  text-shadow: -3px 3px LightGrey;
+  border: 5px solid LightGrey;
+  z-index: 2;
+}
+
+.square-5:hover ~ .square-6{
+  z-index: 0;
+}
+
+.square-6:hover {
+  z-index: 0;
+}
+
+/* ======== Slide 4 ========= */
+label[for=hide-4]{
+  z-index: 5;
+}
+
+.slide-4 {
+  z-index: 4;
+  height: 100vh;
+  width: 100vw;
+  background-color: MintCream;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#hide-4[type=checkbox]:checked ~ label[for=hide-4] {
+  top: 70px;
+  z-index: 0;
+  background-color: pink;
+}
+
+#hide-4[type=checkbox]:checked ~ .slide-4 {
+  z-index: 0;
+}
+
 /* Show z-index effect */
 label[for=reveal]{
-  z-index: 7;
+  z-index: 6;
   bottom: 0;
 }
 
 #reveal[type=checkbox]:checked ~ .slide-1{
   z-index: 1;
-  -webkit-transform: translate3d(200px, 30px, 0px) rotate3d(-1, 2, 0, -70deg);
+  -webkit-transform: translate3d(400px, 30px, 0px) rotate3d(-1, 2, 0, -70deg);
   box-shadow: 10px 10px 8px 10px #3c3c3c;
   opacity: 0.7;
   -webkit-transition: -webkit-transform 0.5s;
@@ -237,7 +311,7 @@ label[for=reveal]{
 
 #reveal[type=checkbox]:checked ~ .slide-2{
   z-index: 2;
-  -webkit-transform: translate3d(0px, 0px, 0px) rotate3d(-1, 2, 0, -70deg);
+  -webkit-transform: translate3d(200px, 0px, 0px) rotate3d(-1, 2, 0, -70deg);
   box-shadow: 10px 10px 8px 10px #3c3c3c;
   opacity: 0.7;
   -webkit-transition: -webkit-transform 0.5s;
@@ -246,6 +320,15 @@ label[for=reveal]{
 
 #reveal[type=checkbox]:checked ~ .slide-3{
   z-index: 3;
+  -webkit-transform: translate3d(0px, -30px, 0px) rotate3d(-1, 2, 0, -70deg);
+  box-shadow: 10px 10px 8px 10px #3c3c3c;
+  opacity: 0.7;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+#reveal[type=checkbox]:checked ~ .slide-4{
+  z-index: 4;
   -webkit-transform: translate3d(-200px, -30px, 0px) rotate3d(-1, 2, 0, -70deg);
   box-shadow: 10px 10px 8px 10px #3c3c3c;
   opacity: 0.7;
